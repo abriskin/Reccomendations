@@ -1,0 +1,2 @@
+rootProject.name='Reccomendations'
+include ':app'
