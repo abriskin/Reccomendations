@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+//user picks recommendation type
 public class MainActivity extends AppCompatActivity {
 
     @Override
