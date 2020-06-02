@@ -2,6 +2,7 @@ package com.example.reccomendations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,12 +16,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClicked(View view) {
-        switch(view.getId()){
-            case R.id.movie_button:
-                break;
-            case R.id.music_button:
-                break;
-        }
-
+        Intent intent = new Intent(MainActivity.this, EnterInfo.class);
+        System.out.println("look here" + view.getId());
+        intent.putExtra("mediaButtonPressed", view.getId());
+        startActivity(intent);
+        finish();
     }
 }

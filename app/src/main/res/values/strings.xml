@@ -3,7 +3,14 @@
     <string name="title_activity_enter__info">Enter_Info</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    //main activity
     <string name="music_button">Music</string>
     <string name="movie_button">Movie</string>
     <string name="choice">Pick One</string>
+
+    //enter info activity (empty text will be set in java file)
+    <string name="enter_text"> </string>
+    <string name="next_button"> </string>
+    <string name="end_button">Get Recommendations</string>
 </resources>

@@ -4,39 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".EnterInfo">
 
     <Button
         android:textAllCaps="false"
-        android:id="@+id/music_button"
-        android:layout_width="195dp"
-        android:layout_height="80dp"
-        android:text="@string/music_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="buttonClicked" />
-
-    <Button
-        android:textAllCaps="false"
-        android:id="@+id/movie_button"
-        android:layout_width="191dp"
-        android:layout_height="94dp"
-        android:text="@string/movie_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/music_button"
-        android:onClick="buttonClicked"/>
-
-    <TextView
-        android:textAllCaps="false"
-        android:id="@+id/choose"
+        android:id="@+id/end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/choice"
+        android:text="@string/end_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_button" />
+        app:layout_constraintTop_toBottomOf="@+id/next" />
 
+    <TextView
+        android:textAllCaps="false"
+        android:id="@+id/enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:text="@string/next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter" />
 </androidx.constraintlayout.widget.ConstraintLayout>

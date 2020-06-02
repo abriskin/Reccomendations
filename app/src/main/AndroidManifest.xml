@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Enter_Info"
-            android:label="@string/title_activity_enter__info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EnterInfo"></activity>
         <activity android:name=".Shrek" />
         <activity android:name=".Loading" />
         <activity android:name=".MainActivity">
