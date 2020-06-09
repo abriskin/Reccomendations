@@ -1,4 +1,4 @@
-package com.example.reccomendations;
+    package com.example.reccomendations;
 
         import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,64 +9,61 @@ package com.example.reccomendations;
         import android.widget.Button;
         import android.widget.TextView;
 
-public class EnterInfo extends AppCompatActivity {
+    public class EnterInfo extends AppCompatActivity {
 
-    private static int recType;
+        private static int recType;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_info2);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_enter_info2);
 
+            TextView enterV = (TextView)findViewById(R.id.enter);
+            Button nextV = (Button)findViewById(R.id.next);
+            ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
+            setRecType(getIntent().getIntExtra("mediaButtonPressed", 0));
 
-        ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
-        TextView enterV = (TextView)findViewById(R.id.enter);
-        Button nextV = (Button)findViewById(R.id.next);
-
-        setRecType(getIntent().getIntExtra("mediaButtonPressed", 0));
-
-        switch (recType) {
-            case 1:
-                enterV.setText("Enter A Movie You Enjoyed");
-                nextV.setText("Enter Another Movie");
-                break;
-            case 2:
-                enterV.setText("Enter An Album You Enjoyed");
-                nextV.setText("Enter Another Album");
-                break;
-        }
-    }
-
-    public void setRecType(Integer button) {
-        switch (button) {
-            case R.id.movie_button:
-                recType = 1;
-                break;
-            case R.id.music_button:
-                recType = 2;
-                break;
-        }
-    }
-
-    public void nextClick(View view) {
-        Intent i = new Intent(EnterInfo.this, EnterInfo.class);
-        startActivity(i);
-        finish();
-    }
-
-    public void endClick(View view) {
-        Intent i = new Intent(EnterInfo.this, ActualLoadingDialogue.class);
-        startActivity(i);
-        final ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
-        loadingDialogue.startLoadingAnimation();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                loadingDialogue.dismissDialogue();
+            switch (recType) {
+                case 1:
+                    enterV.setText("Enter A Movie You Enjoyed");
+                    nextV.setText("Enter Another Movie");
+                    break;
+                case 2:
+                    enterV.setText("Enter An Album You Enjoyed");
+                    nextV.setText("Enter Another Album");
+                    break;
             }
-        }, 5000);
+        }
 
-        finish();
+        public void setRecType(Integer button) {
+            switch (button) {
+                case R.id.movie_button:
+                    recType = 1;
+                    break;
+                case R.id.music_button:
+                    recType = 2;
+                    break;
+            }
+        }
+
+        public void nextClick(View view) {
+            Intent i = new Intent(EnterInfo.this, EnterInfo.class);
+            startActivity(i);
+            finish();
+        }
+
+        public void endClick(View view) {
+            Intent i = new Intent(EnterInfo.this, ActualLoadingDialogue.class);
+            startActivity(i);
+            final ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
+            loadingDialogue.startLoadingAnimation();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadingDialogue.dismissDialogue();
+                }
+            }, 5000);
+            finish();
+        }
     }
-}
