@@ -1,17 +1,25 @@
 package com.example.reccomendations;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
-public class ActualLoadingDialogue {
-    private Activity activity;
-    private AlertDialog dialog;
-    public ActualLoadingDialogue(Activity myActivity){
-        activity = myActivity;
+public class loading extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_loading);
     }
 
+    private Activity activity;
+    private AlertDialog dialog;
+    public loading(Activity myActivity){
+        activity = myActivity;
+    }
 
     public void startLoadingAnimation(){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
@@ -23,7 +31,6 @@ public class ActualLoadingDialogue {
         dialog.show();
 
     }
-
     public void dismissDialogue(){
         dialog.dismiss();
     }

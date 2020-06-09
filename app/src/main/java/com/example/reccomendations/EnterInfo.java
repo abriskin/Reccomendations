@@ -20,7 +20,7 @@
 
             TextView enterV = (TextView)findViewById(R.id.enter);
             Button nextV = (Button)findViewById(R.id.next);
-            ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
+            loading loadingDialogue = new loading(EnterInfo.this);
             setRecType(getIntent().getIntExtra("mediaButtonPressed", 0));
 
             switch (recType) {
@@ -53,9 +53,10 @@
         }
 
         public void endClick(View view) {
-            Intent i = new Intent(EnterInfo.this, ActualLoadingDialogue.class);
+            Intent i = new Intent(EnterInfo.this, loading.class);
             startActivity(i);
-            final ActualLoadingDialogue loadingDialogue = new ActualLoadingDialogue(EnterInfo.this);
+
+            final loading loadingDialogue = new loading(EnterInfo.this);
             loadingDialogue.startLoadingAnimation();
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -64,6 +65,7 @@
                     loadingDialogue.dismissDialogue();
                 }
             }, 5000);
+
             finish();
         }
     }
