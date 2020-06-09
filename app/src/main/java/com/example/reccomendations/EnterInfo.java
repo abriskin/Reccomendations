@@ -52,7 +52,7 @@
         }
 
         public void endClick(View view) {
-            Intent i = new Intent(EnterInfo.this, Loading.class);
+            Intent i = new Intent(EnterInfo.this, ActualLoadingDialogue.class);
             startActivity(i);
             finish();
         }
