@@ -46,7 +46,8 @@ public class Shrek extends AppCompatActivity {
         }
     }
 
-    public void mainClick() {
+    public void mainClick(View view) {
+        System.out.println("entered mainclick");
         Intent i = new Intent(Shrek.this, MainActivity.class);
         startActivity(i);
         finish();
