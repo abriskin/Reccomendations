@@ -34,14 +34,21 @@ public class Shrek extends AppCompatActivity {
     }
 
     public void setImage(){
-        ImageView iv = (ImageView)findViewById(R.id.imageView3);
+        ImageView imageV = (ImageView)findViewById(R.id.imageView3);
+        ImageView imageV2 = (ImageView)findViewById(R.id.imageView);
+        ImageView imageV3 = (ImageView)findViewById(R.id.imageView2);
+
         int recType = EnterInfo.getRecType();
         switch (recType) {
             case 1:
-                iv.setImageResource(R.drawable.shrek_the_guy);
+                imageV.setImageResource(R.drawable.shrek_the_guy_foreground);
+                imageV2.setImageResource(R.drawable.shrek_the_movie_foreground);
+                imageV3.setImageResource(R.drawable.shrek_the_movie_2_foreground);
                 break;
             case 2:
-                iv.setImageResource(R.drawable.shrek_the_musical);
+                imageV.setImageResource(R.drawable.shrek_the_musical_foreground);
+                imageV2.setImageResource(R.drawable.shrek_the_musical_words_foreground);
+                imageV3.setImageResource(R.drawable.shrek_the_cd_foreground);
                 break;
         }
     }
