@@ -11,7 +11,7 @@
 
     public class EnterInfo extends AppCompatActivity {
 
-        private static int recType;
+        private static int recType = 0;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +55,9 @@
             System.out.println("entered endclick");
             Intent i = new Intent(EnterInfo.this, loading.class);
             startActivity(i);
+        }
 
-//            final loading loadingDialogue = new loading(EnterInfo.this);
-//            loadingDialogue.startLoadingAnimation();
-//            Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    loadingDialogue.dismissDialogue();
-//                }
-//            }, 5000);
-//
-//            finish();
+        public static int getRecType() {
+            return recType;
         }
     }
