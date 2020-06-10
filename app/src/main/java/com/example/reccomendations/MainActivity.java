@@ -3,6 +3,7 @@ package com.example.reccomendations;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonClicked(View view) {
         Intent intent = new Intent(MainActivity.this, EnterInfo.class);
-        System.out.println("look here" + view.getId());
         intent.putExtra("mediaButtonPressed", view.getId());
         startActivity(intent);
         finish();
